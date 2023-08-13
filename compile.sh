@@ -2,3 +2,4 @@
 
 cmake .
 make
+mv src/OpenGL .
