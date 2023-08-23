@@ -79,9 +79,18 @@ int main ( int argc, char* argv[] ) {
         std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << "\n";
     }
 
+    const char *fragmentShaderSource = "#version 330 core\n"
+    "out vec4 FragColor;\n"
+    "void main()\n"
+    "{\n"
+    "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0);\n"
+    "}\0";
+
+
+
     u_int32_t fragmentShader;
     fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(fragmentShader, 1, &fragmentShader, nullptr);
+    glShaderSource(fragmentShader, 1, &fragmentShaderSource, nullptr);
     glCompileShader(fragmentShader);
 
     u_int32_t shaderProgram;
@@ -108,12 +117,6 @@ int main ( int argc, char* argv[] ) {
     glEnableVertexAttribArray(0);
     glUseProgram(shaderProgram);
 
-    
-
-
-    
-    
-    
     
 
     while (!glfwWindowShouldClose(window)) {
