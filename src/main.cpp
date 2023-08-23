@@ -86,8 +86,6 @@ int main ( int argc, char* argv[] ) {
     "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0);\n"
     "}\0";
 
-
-
     u_int32_t fragmentShader;
     fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(fragmentShader, 1, &fragmentShaderSource, nullptr);
@@ -117,6 +115,17 @@ int main ( int argc, char* argv[] ) {
     glEnableVertexAttribArray(0);
     glUseProgram(shaderProgram);
 
+    u_int32_t VAO;
+    glGenVertexArrays(1, &VAO);
+
+    glBindVertexArray(VAO);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), nullptr);
+    glEnableVertexAttribArray(0);
+
+    glUseProgram(shaderProgram);
+    glBindVertexArray(VAO);
     
 
     while (!glfwWindowShouldClose(window)) {
@@ -126,6 +135,7 @@ int main ( int argc, char* argv[] ) {
         //rendering
         glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
         glClear(GL_COLOR_BUFFER_BIT);
+        glDrawArrays(GL_TRIANGLES, 0, 3);
 
         //check and call events and swap buffers
         glfwSwapBuffers(window);
