@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/dan/code/opengl/src",
+  "command": "/usr/bin/c++  -I/home/dan/code/opengl/include -g -o CMakeFiles/OpenGL.dir/main.cpp.o -c /home/dan/code/opengl/src/main.cpp",
+  "file": "/home/dan/code/opengl/src/main.cpp",
+  "output": "src/CMakeFiles/OpenGL.dir/main.cpp.o"
+},
+{
+  "directory": "/home/dan/code/opengl/src",
+  "command": "/usr/bin/cc  -I/home/dan/code/opengl/include -g -o CMakeFiles/OpenGL.dir/glad.c.o -c /home/dan/code/opengl/src/glad.c",
+  "file": "/home/dan/code/opengl/src/glad.c",
+  "output": "src/CMakeFiles/OpenGL.dir/glad.c.o"
+}
+]
