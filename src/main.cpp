@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
     std::string vertexsource;
-    loadShaderSource("GLSL/vertexShaderSource.glsl", vertexsource);
+    loadShaderSource("src/GLSL/vertexShaderSource.glsl", vertexsource);
     const char *vertexShaderSource = vertexsource.c_str();
     std::cout << vertexsource << "\n";
 
@@ -107,7 +107,7 @@ int main(int argc, char *argv[])
                   << infoLog << "\n";
     }
     std::string fragmentsource;
-    loadShaderSource("GLSL/fragmentShaderSource.glsl", fragmentsource);
+    loadShaderSource(" src/GLSL/fragmentShaderSource.glsl", fragmentsource);
 
     /*
     const char *fragmentShaderSource = "#version 330 core\n"
