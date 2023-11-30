@@ -42,7 +42,7 @@ bool loadShaderSource(const std::string &filename, std::string &out) {
     return true;
 }
 
-
+    
 int main(int argc, char *argv[])
 {
     glfwInit();
